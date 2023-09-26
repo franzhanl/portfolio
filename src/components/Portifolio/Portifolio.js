@@ -32,10 +32,50 @@ const StyledLi = styled.li`
     width: 400px;
     text-align: center;
     background-color: white;
+
+    
 `
 const StyledImage = styled.img`
+    width: 100%;
     height: 255px;
+    transition: all 0.5s ease;
 
+    &:hover{
+        opacity: 5%;
+    }
+`
+const StyledLink = styled.a`
+    height: 255px;    
+    position: relative;
+
+    &:hover{
+        background-color: rgb(255, 200, 0);
+
+        // Plus icon ( + )
+        &::before,
+        &::after {
+            content: ''; /* O conteúdo será uma linha */
+            position: absolute;
+            background-color: #fff; /* Cor da linha */
+            border-radius: 10px;
+        }
+
+        &::before {
+            width: 50px; 
+            height: 8px; 
+            top: 48%; 
+            left: 0; 
+            transform: translate(334%, -50%); 
+        }
+
+        &::after {
+            width: 8px; 
+            height: 50px; 
+            top: 0; 
+            left: 48%; 
+            transform: translate(-50%, 195%); 
+        }
+    }
 `
 const StyledSubTitle = styled.span`
     font-style: italic;
@@ -48,32 +88,32 @@ const Portifolio = () => {
             <StyledTitle>Portifólio</StyledTitle>
             <StyledList>
                 <StyledLi>
-                    <StyledImage src={huddleImage} />
+                    <StyledLink><StyledImage src={huddleImage} /></StyledLink>
                     <h2>Huddle</h2> 
                     <StyledSubTitle>Uma home page simples</StyledSubTitle>
                 </StyledLi>
                 <StyledLi>
-                    <StyledImage src={pokedexImage} />
+                    <StyledLink><StyledImage src={pokedexImage} /></StyledLink>
                     <h2>Pokedéx</h2>
                     <StyledSubTitle>Simulador de Pokedex</StyledSubTitle>
                 </StyledLi>
                 <StyledLi>
-                    <StyledImage src={gitHubImage} />
+                    <StyledLink><StyledImage src={gitHubImage} /></StyledLink>
                     <h2>GitHub Profile</h2>
                     <StyledSubTitle>Pesquisador de profiles</StyledSubTitle>
                 </StyledLi>
                 <StyledLi>
-                    <StyledImage src={emBreveImage} />
+                    <StyledLink><StyledImage src={emBreveImage} /></StyledLink>
                     <h2>Em breve</h2>
                     <StyledSubTitle>Projetos futuros</StyledSubTitle>
                 </StyledLi>
                 <StyledLi>
-                    <StyledImage src={emBreveImage} />
+                    <StyledLink><StyledImage src={emBreveImage} /></StyledLink>
                     <h2>Em breve</h2>
                     <StyledSubTitle>Projetos futuros</StyledSubTitle>
                 </StyledLi>
                 <StyledLi>
-                    <StyledImage src={emBreveImage} />
+                    <StyledLink><StyledImage src={emBreveImage} /></StyledLink>
                     <h2>Em breve</h2>
                     <StyledSubTitle>Projetos futuros</StyledSubTitle>                    
                 </StyledLi>
