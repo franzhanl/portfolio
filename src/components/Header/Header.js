@@ -52,7 +52,7 @@ const Header = () => {
     return(
         <StyledHeader>
             <StyledNav>
-                <h2>Olá</h2>
+                <h2>Home</h2>
                 <StyledUl>
                     <StyledLi>Sobre mim</StyledLi>
                     <StyledLi>Portifolio</StyledLi>

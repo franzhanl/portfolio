@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 import profileImage from '../../assets/images/perfil1.jpg'
 
-const StyledAbout = styled.section`
-    display: flex;
-    align-items: center;
-    gap: 40px;
+const StyledTitle = styled.h2`
+    font-size: 3rem;
+    text-transform: uppercase;
 `
 const StyledProfile = styled.div`
     display: flex;
@@ -13,6 +12,12 @@ const StyledProfile = styled.div`
     align-items: center;
     width: 300px;
     height: 100%;
+    padding: 30px;
+`
+const StyledAbout = styled.section`
+    display: flex;
+    align-items: center;
+    gap: 40px;
 `
 const StyledText = styled.p`
     display: flex;
@@ -53,6 +58,7 @@ const StyledContacts = styled.div`
 const About = () => {
     return(
         <section>
+            <StyledTitle>Sobre Mim</StyledTitle>
             <StyledProfile>
             <StyledSpan>Oi! como vai você?</StyledSpan>
 
