@@ -1,3 +1,4 @@
+import { Navbar } from '../components/Navbar/Navbar';
 import { Header } from '../components/Header/Header';
 import { About } from '../components/About/About';
 import { Portifolio } from '../components/Portifolio/Portifolio';
@@ -10,10 +11,10 @@ const StyledHome = styled.div`
     align-items: center;
 `
 
-
 function Home() {
   return (
     <StyledHome>
+      <Navbar />
       <Header />
       <About />
       <Portifolio />

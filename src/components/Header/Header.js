@@ -25,41 +25,11 @@ const StyledSubtitle = styled.div`
     font-style: italic;
     font-family: serif;
 `
-const StyledNav = styled.nav`
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    top: 0;
-    width: 80%;
-
-`
-const StyledUl = styled.ul`
-    display: flex;
-    list-style-type: none;
-    text-transform: uppercase;
-    gap: 30px;
-    font-weight: 500;
-    
-`
-const StyledLi = styled.li`
-    &:hover{
-        color: #ffc800;
-    }
-`
 
 
 const Header = () => {
     return(
         <StyledHeader>
-            <StyledNav>
-                <h2>Home</h2>
-                <StyledUl>
-                    <StyledLi>Sobre mim</StyledLi>
-                    <StyledLi>Portifolio</StyledLi>
-                    <StyledLi>Curriculo</StyledLi>
-                    <StyledLi>Contato</StyledLi>
-                </StyledUl>
-            </StyledNav>
             <StyledSubtitle>Seja Bem Vindo(a)!</StyledSubtitle>
             <StyledTitle>É um prazer te receber</StyledTitle>
             <Button>Saber mais</Button>
