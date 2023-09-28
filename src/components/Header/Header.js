@@ -1,6 +1,7 @@
 import homeImage from '../../assets/images/home.jpg'
 import styled from 'styled-components'
 import { Button } from '../Button/Button'
+import { forwardRef } from 'react'
 
 const StyledHeader = styled.header`
     display: flex;
@@ -26,15 +27,14 @@ const StyledSubtitle = styled.div`
     font-family: serif;
 `
 
-
-const Header = () => {
+const Header = forwardRef((props, ref) => {
     return(
-        <StyledHeader>
+        <StyledHeader ref={ref}>
             <StyledSubtitle>Seja Bem Vindo(a)!</StyledSubtitle>
             <StyledTitle>É um prazer te receber</StyledTitle>
             <Button>Saber mais</Button>
         </StyledHeader>
     )
-}
+})
 
 export { Header }

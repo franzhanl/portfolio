@@ -8,14 +8,16 @@ const StyledNav = styled.nav`
     top: 0;
     width: 100%;
     color: white;
-    background-color: rgba(51, 51, 51, ${({ isScrolled }) => (isScrolled ? 1 : 0)});
+    background-color: rgba(51, 51, 51, ${({ scrolled }) => (scrolled ? 1 : 0)});
     transition: background-color 0.3s ease;
+    z-index: 1;
 `
 const StyledDiv = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1400px;
+    width: 100%;
+    max-width: 1300px;
 `
 const StyledUl = styled.ul`
     display: flex;
@@ -27,18 +29,19 @@ const StyledUl = styled.ul`
 const StyledA = styled.a`
     &:hover{
         color: #ffc800;
+        cursor: pointer;
     }
 `
 
-const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false)
-
+const Navbar = ({scrollToSection, home, about, portifolio}) => {
+    const [scrolled, setscrolled] = useState(false)
+    
     useEffect( () => {
         const handleScroll = () => {
             if(window.scrollY > 50){
-                setIsScrolled(true)
+                setscrolled(true)
             } else{
-                setIsScrolled(false)
+                setscrolled(false)
             }
         }
 
@@ -50,14 +53,14 @@ const Navbar = () => {
     }, [])
 
     return(
-        <StyledNav isScrolled={isScrolled}>
+        <StyledNav scrolled={scrolled}>
             <StyledDiv>
-            <StyledA><h2>Home</h2></StyledA>
+            <StyledA onClick={ () => scrollToSection(home)}><h2>Home</h2></StyledA>
                 <StyledUl>
-                    <StyledA><li>Sobre mim</li></StyledA>
-                    <StyledA><li>Portifolio</li></StyledA>
-                    <StyledA><li>Curriculo</li></StyledA>
-                    <StyledA><li>Contato</li></StyledA>
+                    <StyledA onClick={ () => scrollToSection(about)}><li>Sobre mim</li></StyledA>
+                    <StyledA onClick={ () => scrollToSection(portifolio)}><li>Portifolio</li></StyledA>
+                    <StyledA onClick={ () => scrollToSection()}><li>Curriculo</li></StyledA>
+                    <StyledA onClick={ () => scrollToSection()}><li>Contato</li></StyledA>
                 </StyledUl>
             </StyledDiv>
         </StyledNav>

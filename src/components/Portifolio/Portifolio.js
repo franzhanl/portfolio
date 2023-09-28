@@ -3,6 +3,7 @@ import huddleImage from "../../assets/images/portifolio-huddle.png"
 import pokedexImage from "../../assets/images/portifolio-pokedex.png"
 import gitHubImage from "../../assets/images/portifolio-github.png"
 import emBreveImage from "../../assets/images/em-breve.jpg"
+import { forwardRef } from "react"
 
 const StyledSection = styled.section`
     background-color: #f8f9fa;
@@ -11,7 +12,7 @@ const StyledSection = styled.section`
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding-bottom: 50px;
+    padding: 80px 0;
 `
 const StyledTitle = styled.h2`
     font-size: 3rem;
@@ -23,7 +24,7 @@ const StyledList = styled.ul`
     flex-wrap: wrap;
     list-style-type: none;
     gap: 30px;
-    width: 1400px;
+    max-width: 1300px;
 `
 const StyledLi = styled.li`
     display: flex;
@@ -50,7 +51,7 @@ const StyledLink = styled.a`
 
     &:hover{
         background-color: rgb(255, 200, 0);
-
+        
         // Plus icon ( + )
         &::before,
         &::after {
@@ -58,6 +59,7 @@ const StyledLink = styled.a`
             position: absolute;
             background-color: #fff; /* Cor da linha */
             border-radius: 10px;
+            pointer-events: none;
         }
 
         &::before {
@@ -82,9 +84,9 @@ const StyledSubTitle = styled.span`
     color: grey;
     padding-bottom: 30px;
 `
-const Portifolio = () => {
+const Portifolio = forwardRef((props, ref) => {
     return(
-        <StyledSection>
+        <StyledSection ref={ref}>
             <StyledTitle>Portifólio</StyledTitle>
             <StyledList>
                 <StyledLi>
@@ -120,6 +122,6 @@ const Portifolio = () => {
             </StyledList>
         </StyledSection>
     )
-}
+})
 
 export { Portifolio }

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import profileImage from '../../assets/images/perfil1.jpg'
+import { forwardRef } from 'react'
 
 const StyledTitle = styled.h2`
     font-size: 3rem;
@@ -10,11 +11,11 @@ const StyledProfile = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 600px;
     height: 100%;
-    padding: 30px;
+    padding: 80px;
 `
-const StyledAbout = styled.section`
+const StyledAbout = styled.div`
     display: flex;
     align-items: center;
     gap: 40px;
@@ -55,36 +56,36 @@ const StyledContacts = styled.div`
     gap: 20px;
 `
 
-const About = () => {
+const About = forwardRef((props, ref) => {
     return(
-        <section>
-            <StyledTitle>Sobre Mim</StyledTitle>
+        <section ref={ref}>
             <StyledProfile>
-            <StyledSpan>Oi! como vai você?</StyledSpan>
+                <StyledTitle>Sobre Mim</StyledTitle>
+                <StyledSpan>Oi! como vai você?</StyledSpan>
 
-            <StyledAbout>
-                <StyledPicture></StyledPicture>
-                <StyledText>
-                    Me chamo Franz, sou um desenvolvedor frontend em busca de oportunidades para expandir 
-                    minhas habilidades e conhecimentos em desenvolvimento web. Com formação em Análise e 
-                    Desenvolvimento de Sistemas, estou comprometido em crescer e contribuir para projetos 
-                    desafiadores. Meu entusiasmo pela programação e minha vontade de aprender me motivam a 
-                    enfrentar novos desafios e a desenvolver interfaces de usuário eficazes e atraentes. Sou 
-                    dedicado, autodidata e estou ansioso para fazer parte de uma equipe de desenvolvimento.
-                </StyledText>
-            </StyledAbout>
+                <StyledAbout>
+                    <StyledPicture></StyledPicture>
+                    <StyledText>
+                        Me chamo Franz, sou um desenvolvedor frontend em busca de oportunidades para expandir 
+                        minhas habilidades e conhecimentos em desenvolvimento web. Com formação em Análise e 
+                        Desenvolvimento de Sistemas, estou comprometido em crescer e contribuir para projetos 
+                        desafiadores. Meu entusiasmo pela programação e minha vontade de aprender me motivam a 
+                        enfrentar novos desafios e a desenvolver interfaces de usuário eficazes e atraentes. Sou 
+                        dedicado, autodidata e estou ansioso para fazer parte de uma equipe de desenvolvimento.
+                    </StyledText>
+                </StyledAbout>
 
-            <StyledName>Franz Richard Hanl Neto</StyledName>
-            <StyledSpan>Frontend Developer</StyledSpan>
+                <StyledName>Franz Richard Hanl Neto</StyledName>
+                <StyledSpan>Frontend Developer</StyledSpan>
 
-            <StyledContacts>
-                <StyledIcon href='https://www.linkedin.com/in/franz-hanl/'><i class="fab fa-linkedin-in fa-lg"></i></StyledIcon>
-                <StyledIcon href='https://github.com/franzhanl'><i class="fab fa-github-alt fa-lg"></i></StyledIcon>
-            </StyledContacts>
+                <StyledContacts>
+                    <StyledIcon href='https://www.linkedin.com/in/franz-hanl/'><i class="fab fa-linkedin-in fa-lg"></i></StyledIcon>
+                    <StyledIcon href='https://github.com/franzhanl'><i class="fab fa-github-alt fa-lg"></i></StyledIcon>
+                </StyledContacts>
             </StyledProfile>
         </section>
         
     )
-}
+})
 
 export { About }
