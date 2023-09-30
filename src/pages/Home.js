@@ -2,6 +2,7 @@ import { Navbar } from '../components/Navbar/Navbar';
 import { Header } from '../components/Header/Header';
 import { About } from '../components/About/About';
 import { Portifolio } from '../components/Portifolio/Portifolio';
+import { Curriculum } from '../components/Curriculum/Curriculum';
 import styled from 'styled-components';
 import React, { useRef } from 'react';
 
@@ -16,6 +17,7 @@ const Home = () => {
   const home = useRef(null);
   const about = useRef(null);
   const portifolio = useRef(null);
+  const curriculum = useRef(null);
 
   const scrollToSection = (ref) => {
     if (ref.current) {
@@ -25,10 +27,11 @@ const Home = () => {
 
   return (
     <StyledHome>
-      <Navbar scrollToSection={scrollToSection} home={home} about={about} portifolio={portifolio}/>
+      <Navbar scrollToSection={scrollToSection} home={home} about={about} portifolio={portifolio} curriculum={curriculum}/>
       <Header ref={home}/>
       <About  ref={about}/>
       <Portifolio ref={portifolio}/>
+      <Curriculum ref={curriculum}/>
     </StyledHome>
   )
 }

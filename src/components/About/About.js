@@ -1,11 +1,8 @@
 import styled from 'styled-components'
 import profileImage from '../../assets/images/perfil1.jpg'
 import { forwardRef } from 'react'
+import { StyledTitle } from '../../styles/StyledGlobal'
 
-const StyledTitle = styled.h2`
-    font-size: 3rem;
-    text-transform: uppercase;
-`
 const StyledProfile = styled.div`
     display: flex;
     flex-direction: column;

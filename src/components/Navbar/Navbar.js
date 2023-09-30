@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
+import { Curriculum } from '../Curriculum/Curriculum'
 
 const StyledNav = styled.nav`
     position: fixed;
@@ -33,7 +34,7 @@ const StyledA = styled.a`
     }
 `
 
-const Navbar = ({scrollToSection, home, about, portifolio}) => {
+const Navbar = ({scrollToSection, home, about, portifolio, curriculum}) => {
     const [scrolled, setscrolled] = useState(false)
     
     useEffect( () => {
@@ -59,7 +60,7 @@ const Navbar = ({scrollToSection, home, about, portifolio}) => {
                 <StyledUl>
                     <StyledA onClick={ () => scrollToSection(about)}><li>Sobre mim</li></StyledA>
                     <StyledA onClick={ () => scrollToSection(portifolio)}><li>Portifolio</li></StyledA>
-                    <StyledA onClick={ () => scrollToSection()}><li>Curriculo</li></StyledA>
+                    <StyledA onClick={ () => scrollToSection(curriculum)}><li>Currículo</li></StyledA>
                     <StyledA onClick={ () => scrollToSection()}><li>Contato</li></StyledA>
                 </StyledUl>
             </StyledDiv>

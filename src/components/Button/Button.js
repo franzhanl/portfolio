@@ -6,6 +6,7 @@ const StyledButton = styled.a`
     background-color: #ffc800;
     border-radius: 5px;
     padding: 20px;
+    cursor: pointer;
 
     &:hover{
         background-color: #d9aa00;
@@ -13,7 +14,7 @@ const StyledButton = styled.a`
 `
 
 const Button = (props) => {
-    return <StyledButton> {props.children} </StyledButton>
+    return <StyledButton onClick={props.onClick}> {props.children} </StyledButton>
 }
 
 export { Button }

@@ -4,6 +4,7 @@ import pokedexImage from "../../assets/images/portifolio-pokedex.png"
 import gitHubImage from "../../assets/images/portifolio-github.png"
 import emBreveImage from "../../assets/images/em-breve.jpg"
 import { forwardRef } from "react"
+import { StyledTitle } from '../../styles/StyledGlobal'
 
 const StyledSection = styled.section`
     background-color: #f8f9fa;
@@ -14,10 +15,6 @@ const StyledSection = styled.section`
     width: 100%;
     padding: 80px 0;
 `
-const StyledTitle = styled.h2`
-    font-size: 3rem;
-    text-transform: uppercase;
-`
 const StyledList = styled.ul`
     display: flex;
     justify-content: center;
@@ -25,6 +22,7 @@ const StyledList = styled.ul`
     list-style-type: none;
     gap: 30px;
     max-width: 1300px;
+    padding: 0;
 `
 const StyledLi = styled.li`
     display: flex;
