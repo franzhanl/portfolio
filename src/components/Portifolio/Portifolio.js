@@ -37,7 +37,7 @@ const StyledLi = styled.li`
 const StyledImage = styled.img`
     width: 100%;
     height: 255px;
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
 
     &:hover{
         opacity: 5%;
