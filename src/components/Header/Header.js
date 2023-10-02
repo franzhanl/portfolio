@@ -27,12 +27,12 @@ const StyledSubtitle = styled.div`
     font-family: serif;
 `
 
-const Header = forwardRef((props, ref) => {
+const Header = forwardRef(({props, ref, scrollToSection, about}) => {
     return(
         <StyledHeader ref={ref}>
             <StyledSubtitle>Seja Bem Vindo(a)!</StyledSubtitle>
             <StyledTitle>É um prazer te receber</StyledTitle>
-            <Button>Saber mais</Button>
+            <Button onClick={ () => scrollToSection(about)}>Saber mais</Button>
         </StyledHeader>
     )
 })

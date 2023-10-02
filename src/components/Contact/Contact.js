@@ -20,7 +20,7 @@ const StyledContent = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 500px;
+    height: 450px;
     gap: 30px;
 `
 const StyledLink = styled.a`

@@ -4,6 +4,7 @@ import { About } from '../components/About/About';
 import { Portifolio } from '../components/Portifolio/Portifolio';
 import { Curriculum } from '../components/Curriculum/Curriculum';
 import { Contact } from '../components/Contact/Contact';
+import { Footer } from '../components/Footer/Footer';
 import styled from 'styled-components';
 import React, { useRef } from 'react';
 
@@ -30,11 +31,12 @@ const Home = () => {
   return (
     <StyledHome>
       <Navbar scrollToSection={scrollToSection} home={home} about={about} portifolio={portifolio} curriculum={curriculum} contact={contact} />
-      <Header ref={home}/>
+      <Header scrollToSection={scrollToSection} about={about} ref={home}/>
       <About  ref={about}/>
       <Portifolio ref={portifolio}/>
       <Curriculum ref={curriculum}/>
       <Contact ref={contact}/>
+      <Footer />
     </StyledHome>
   )
 }
