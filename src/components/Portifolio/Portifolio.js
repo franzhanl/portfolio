@@ -1,10 +1,15 @@
 import styled from "styled-components"
-import huddleImage from "../../assets/images/portifolio-huddle.png"
-import pokedexImage from "../../assets/images/portifolio-pokedex.png"
-import gitHubImage from "../../assets/images/portifolio-github.png"
+import huddleImage from "../../assets/images/portfolio/portifolio-huddle.png"
+import pokedexImage from "../../assets/images/portfolio/portifolio-pokedex.png"
+import gitHubImage from "../../assets/images/portfolio/portifolio-github.png"
+import responsiveHuddle from "../../assets/images/portfolio/responsive-huddle.png"
+import responsivePokedex from "../../assets/images/portfolio/responsive-pokedex (2).png"
+import responsiveGithub from "../../assets/images/portfolio/responsive-github.png"
 import emBreveImage from "../../assets/images/em-breve.jpg"
-import { forwardRef } from "react"
+import { forwardRef, useState } from "react"
 import { StyledTitle } from '../../styles/StyledGlobal'
+import { Modal } from "../Modal/Modal"
+import { Button } from "../Button/Button"
 
 const StyledSection = styled.section`
     background-color: #f8f9fa;
@@ -31,8 +36,6 @@ const StyledLi = styled.li`
     width: 400px;
     text-align: center;
     background-color: white;
-
-    
 `
 const StyledImage = styled.img`
     width: 100%;
@@ -77,28 +80,82 @@ const StyledLink = styled.a`
         }
     }
 `
+
 const StyledSubTitle = styled.span`
     font-style: italic;
     color: grey;
     padding-bottom: 30px;
 `
+const StyledModalImage = styled.img`
+    width: 100%;
+`
+const StyledModalTitle = styled.h2`
+    text-transform: uppercase;
+`
+const StyledModalButtons = styled.p`
+    display: flex;
+    gap: 30px;
+
+    a {
+        font-size: 14px;
+        font-weight: 500;
+        
+    }
+`
 const Portifolio = forwardRef((props, ref) => {
+
+    const [showModal1, setShowModal1] = useState(false)
+    const [showModal2, setShowModal2] = useState(false)
+    const [showModal3, setShowModal3] = useState(false)
+
+    const openModal = (modalNumber) => {
+        switch (modalNumber) {
+          case 1:
+            setShowModal1(true);
+            break
+          case 2:
+            setShowModal2(true);
+            break
+          case 3:
+            setShowModal3(true);
+            break
+          default:
+            break
+        }
+      }
+
+      const closeModal = (modalNumber) => {
+        switch (modalNumber) {
+          case 1:
+            setShowModal1(false);
+            break
+          case 2:
+            setShowModal2(false);
+            break
+          case 3:
+            setShowModal3(false);
+            break
+          default:
+            break;
+        }
+      }
+
     return(
         <StyledSection ref={ref}>
-            <StyledTitle>Portifólio</StyledTitle>
+            <StyledTitle>Portfólio</StyledTitle>
             <StyledList>
                 <StyledLi>
-                    <StyledLink><StyledImage src={huddleImage} /></StyledLink>
+                    <StyledLink onClick={() => openModal(1)}><StyledImage src={huddleImage} /></StyledLink>
                     <h2>Huddle</h2> 
                     <StyledSubTitle>Uma home page simples</StyledSubTitle>
                 </StyledLi>
                 <StyledLi>
-                    <StyledLink><StyledImage src={pokedexImage} /></StyledLink>
+                    <StyledLink onClick={() => openModal(2)}><StyledImage src={pokedexImage} /></StyledLink>
                     <h2>Pokedéx</h2>
                     <StyledSubTitle>Simulador de Pokedex</StyledSubTitle>
                 </StyledLi>
                 <StyledLi>
-                    <StyledLink><StyledImage src={gitHubImage} /></StyledLink>
+                    <StyledLink onClick={() => openModal(3)}><StyledImage src={gitHubImage} /></StyledLink>
                     <h2>GitHub Profile</h2>
                     <StyledSubTitle>Pesquisador de profiles</StyledSubTitle>
                 </StyledLi>
@@ -118,6 +175,52 @@ const Portifolio = forwardRef((props, ref) => {
                     <StyledSubTitle>Projetos futuros</StyledSubTitle>                    
                 </StyledLi>
             </StyledList>
+
+            {/* Modals */}
+            <>
+                <Modal isOpen={showModal1} onClose={() => closeModal(1)}>
+                    <StyledModalTitle>Huddle</StyledModalTitle>
+                    <StyledModalImage src={responsiveHuddle}/>
+                    {/* <StyledModalDescription>
+                         É uma pagina com um layout simples, o objetivo desse site foi
+                        exclusivamente reforçar meu conhecimento sobre responsividade utilizando HTML e CSS.
+                    </StyledModalDescription> */}
+                    <p><strong>Tecnologias</strong>: HTML | CSS</p>
+                    <StyledModalButtons>
+                        <Button href="https://franzhanl.github.io/quest-html-css/" target="_blank">Acessar site</Button>
+                        <Button href="https://github.com/franzhanl/quest-html-css" target="_blank">Acessar repositório</Button>
+                    </StyledModalButtons>
+                </Modal>
+
+                <Modal isOpen={showModal2} onClose={() => closeModal(2)}>
+                    <StyledModalTitle>Pokédex</StyledModalTitle>
+                    <StyledModalImage src={responsivePokedex}/>
+                    {/* <StyledModalDescription>
+                        Um site cujo o objetivo é simular uma pokedex, desse modo trazendo todos os pokemons 
+                        com suas informações que podem ser acessadas de modo individualmente.
+                    </StyledModalDescription> */}
+                    <p><strong>Tecnologias</strong>: ReactJS | HTML | CSS | JavaScript | Styled-Components | ContextAPI</p>
+                    <StyledModalButtons>
+                        <Button href="https://pokedex-api-franz.vercel.app/" target="_blank">Acessar site</Button>
+                        <Button href="https://github.com/franzhanl/pokedex-api" target="_blank">Acessar repositório</Button>
+                    </StyledModalButtons>
+                </Modal>
+
+                <Modal isOpen={showModal3} onClose={() => closeModal(3)}>
+                    <StyledModalTitle>Github Profile</StyledModalTitle>
+                    <StyledModalImage src={responsiveGithub}/>
+                    {/* <StyledModalDescription>
+                        O site possui o intuito de retornar informações de usuarios do GitHub a partir 
+                        do nome pesquisado.
+                    </StyledModalDescription> */}
+                    <p><strong>Tecnologias</strong>: HTML | CSS | JavaScript | GitHubAPI</p>
+                    <StyledModalButtons>
+                        <Button href="https://github-api-nine-blush.vercel.app/" target="_blank">Acessar site</Button>
+                        <Button href="https://github.com/franzhanl/github-api" target="_blank">Acessar repositório</Button>
+                    </StyledModalButtons>
+                    
+                </Modal>
+            </>
         </StyledSection>
     )
 })
