@@ -76,8 +76,8 @@ const About = forwardRef((props, ref) => {
                 <StyledSpan>Frontend Developer</StyledSpan>
 
                 <StyledContacts>
-                    <StyledIcon href='https://www.linkedin.com/in/franz-hanl/'><i class="fab fa-linkedin-in fa-lg"></i></StyledIcon>
-                    <StyledIcon href='https://github.com/franzhanl'><i class="fab fa-github-alt fa-lg"></i></StyledIcon>
+                    <StyledIcon href='https://www.linkedin.com/in/franz-hanl/' target='_blank'><i class="fab fa-linkedin-in fa-lg"></i></StyledIcon>
+                    <StyledIcon href='https://github.com/franzhanl' target='_blank'><i class="fab fa-github-alt fa-lg"></i></StyledIcon>
                 </StyledContacts>
             </StyledProfile>
         </section>
